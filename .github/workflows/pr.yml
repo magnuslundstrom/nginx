@@ -11,12 +11,12 @@ jobs:
         uses: actions/checkout@v2
       - name: Start nginx containe
         run: docker build -t html-server-image . && docker run -d -p 8080:80 html-server-image
-      - name: Make Request
-        id: myRequest
-        uses: fjogeleit/http-request-action@v1
-        with:
-          url: http://0.0.0.0:8080
-          method: 'GET'
-      - name: Show Response
-        run: |
-          echo ${{ steps.myRequest.outputs.response }}
+      - name: Run E2E
+      uses: actions/checkout@master
+      with: 
+          repository: magnuslundstrom/codecept
+          ref: refs/heads/main
+    - name: run the tests
+      run: npm install && npm run codeceptjs:headless   
+
+      
