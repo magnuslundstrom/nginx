@@ -13,7 +13,7 @@ jobs:
         run: docker build -t html-server-image . && docker run -d -p 8080:80 html-server-image
 
       - name: checkout
-        uses: actions/checkout@checkout@v2
+        uses: actions/checkout@v2
         with:
           repository: magnuslundstrom/codecept
           ref: refs/heads/main
