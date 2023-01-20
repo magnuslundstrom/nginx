@@ -16,7 +16,7 @@ jobs:
       with: 
           repository: magnuslundstrom/codecept
           ref: refs/heads/main
-    - name: run the tests
-      run: npm install && npm run codeceptjs:headless   
+      - name: run the tests
+        run: npm install && npm run codeceptjs:headless   
 
       
