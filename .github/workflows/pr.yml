@@ -15,6 +15,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@checkout@v2
         with:
-          repository: magnuslundstrom/codecept
-          ref: refs/heads/main
+            repository: magnuslundstrom/codecept
+            ref: refs/heads/main
         run: npm install && npm run codeceptjs:headless
