@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Start nginx containe
+      - name: Start nginx container
         run: docker build -t html-server-image . && docker run -d -p 8080:80 html-server-image
 
       - name: checkout
