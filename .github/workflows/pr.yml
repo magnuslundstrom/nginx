@@ -15,7 +15,7 @@ jobs:
         id: myRequest
         uses: fjogeleit/http-request-action@v1
         with:
-          url: localhost
+          url: http://localhost
       - name: Show Response
         run: |
           echo ${{ steps.myRequest.outputs.response }}
