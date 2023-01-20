@@ -1,0 +1,14 @@
+name: Pull Request
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Start nginx container
+        run: docker build -t html-server-image . && docker run -d -p 80:80 html-server-image
